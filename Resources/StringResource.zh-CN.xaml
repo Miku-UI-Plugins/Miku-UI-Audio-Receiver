@@ -1,0 +1,5 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=netstandard">
+    <sys:String x:Key="ApplicationName">Miku UI 音频接收器</sys:String>
+    <sys:String x:Key="BtnStartText">开始</sys:String>
+</ResourceDictionary>
