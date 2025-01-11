@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:resources="clr-namespace:Miku_UI_Music_Center.StringResources"
+        mc:Ignorable="d"
+        x:Class="Miku_UI_Music_Center.LyricFloatWindow"
+		Topmost="True"
+		Height="200" Width="1500"
+        Title="LyricFloatWindow">
+
+	<Window.Styles>
+		<Style Selector="Window">
+
+			<Setter Property="SystemDecorations" Value="None"></Setter>
+			<Setter Property="CanResize" Value="False"></Setter>
+			<Setter Property="BorderBrush" Value="Transparent" />
+			<Setter Property="BorderThickness" Value="0" />
+			<Setter Property="Padding" Value="0" />
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="White" Opacity="0"></SolidColorBrush>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Styles>
+
+	<Grid>
+		<TextBlock x:Name="LyricText" Text="{x:Static resources:StringResources.TbLyricText}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="80" TextAlignment="Center" Foreground="White">
+			<TextBlock.Effect>
+				<DropShadowDirectionEffect
+                    BlurRadius="5"
+                    Opacity="1"
+                    ShadowDepth="0"
+                    Color="Black" />
+			</TextBlock.Effect>
+		</TextBlock>
+	</Grid>
+</Window>

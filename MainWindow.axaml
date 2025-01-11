@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:resources="clr-namespace:Miku_UI_Music_Center.StringResources"
+        mc:Ignorable="d" d:DesignWidth="360" d:DesignHeight="640"
+		Width="360" Height="640"
+        x:Class="Miku_UI_Music_Center.MainWindow"
+        Title="{x:Static resources:StringResources.ApplicationName}">
+
+	<Window.Styles>
+		<Style Selector="Window">
+			<Setter Property="ExtendClientAreaChromeHints" Value="NoChrome" />
+			<Setter Property="ExtendClientAreaToDecorationsHint" Value="True" />
+			<Setter Property="ExtendClientAreaTitleBarHeightHint" Value="-1" />
+			<Setter Property="SystemDecorations" Value="None"></Setter>
+			<Setter Property="CanResize" Value="False"></Setter>
+			<Setter Property="BorderBrush" Value="Transparent" />
+			<Setter Property="BorderThickness" Value="0" />
+			<Setter Property="Padding" Value="0" />
+			<Setter Property="TransparencyLevelHint" Value="AcrylicBlur" />
+			<Setter Property="Background">
+				<Setter.Value>
+					<SolidColorBrush Color="White" Opacity="{OnPlatform Default='1', Windows='0.1'}"></SolidColorBrush>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Styles>
+
+	<Grid>
+		<TextBlock x:Name="TitleText" Text="{x:Static resources:StringResources.ApplicationName}" FontSize="30" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="15,15"/>
+		<StackPanel HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Bottom">
+			<CheckBox x:Name="AudioCb" Content="{x:Static resources:StringResources.CbAudioForwardText}" />
+			<CheckBox x:Name="LyricCb" Content="{x:Static resources:StringResources.CbLyricForwardText}" />
+			<Button x:Name="StartBtn" Content="{x:Static resources:StringResources.BtnStartText}" MinWidth="100" FontSize="20" TextBlock.TextAlignment="Center" Click="StartBtn_Click"/>
+		</StackPanel>
+		<TextBlock x:Name="CopyrightText" Text="© 2025 Miku UI" FontSize="15" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,15" />
+	</Grid>
+</Window>
