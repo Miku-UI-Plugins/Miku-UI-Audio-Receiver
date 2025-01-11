@@ -25,6 +25,46 @@
 				</Setter.Value>
 			</Setter>
 		</Style>
+		<Style Selector="TextBlock">
+			<Setter Property="Foreground" Value="Black" />
+		</Style>
+		<Style Selector="CheckBox">
+			<Setter Property="Foreground" Value="Black" />
+			<OnPlatform>
+				<OnPlatform.Default>
+					<Setter Property="Effect">
+						<!-- Windows don't need this workaround -->
+					</Setter>
+				</OnPlatform.Default>
+				<OnPlatform.Linux>
+					<!-- Add a shadow effect for linux, because some distros like Arch will have a white border -->
+					<Setter Property="Effect">
+						<Setter.Value>
+							<DropShadowDirectionEffect
+							BlurRadius="1"
+							Opacity="1"
+							ShadowDepth="0"
+							Color="Black" />
+						</Setter.Value>
+					</Setter>
+				</OnPlatform.Linux>
+			</OnPlatform>
+			
+		</Style>
+		<OnPlatform>
+			<OnPlatform.Default>
+				<Style Selector="Button">
+					<!-- Windows don't need this workaround -->
+				</Style>
+			</OnPlatform.Default>
+			<OnPlatform.Linux>
+				<!-- Custom Button style for linux, because some distros like Arch will have a white background and white font color -->
+				<Style Selector="Button">
+					<Setter Property="Foreground" Value="Black" />
+					<Setter Property="Background" Value="Silver" />
+				</Style>
+			</OnPlatform.Linux>
+		</OnPlatform>
 	</Window.Styles>
 
 	<Grid>
