@@ -35,7 +35,7 @@ public partial class LyricFloatWindow : Window
     private WaveOutEvent waveOut = null!;
 
     // OpenAL (Linux)
-    private const int BufferCount = 8;
+    private const int BufferCount = 16;
     private int[] alBuffers = new int[BufferCount];
     private int source;
     private const ALFormat format = ALFormat.Stereo16; // Stereo, 16-bit
