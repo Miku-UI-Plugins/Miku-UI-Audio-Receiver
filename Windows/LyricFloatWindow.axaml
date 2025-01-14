@@ -11,7 +11,6 @@
 
 	<Window.Styles>
 		<Style Selector="Window">
-
 			<Setter Property="SystemDecorations" Value="None"></Setter>
 			<Setter Property="CanResize" Value="False"></Setter>
 			<Setter Property="BorderBrush" Value="Transparent" />
@@ -26,7 +25,7 @@
 	</Window.Styles>
 
 	<Grid>
-		<TextBlock x:Name="LyricText" Text="{x:Static resources:StringResources.TbLyricText}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="80" TextAlignment="Center" Foreground="White">
+		<TextBlock x:Name="LyricText" Text="{x:Static resources:StringResources.TbLyricText}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="75" TextAlignment="Center" Foreground="White">
 			<TextBlock.Effect>
 				<DropShadowDirectionEffect
                     BlurRadius="5"
