@@ -105,8 +105,15 @@ public partial class LyricFloatWindow : Window
 
                 int receivedBytes = result.ReceivedBytes;
 
-                // Write received data into waveProvider
-                waveProvider.AddSamples(buffer, 0, receivedBytes);
+                try
+                {
+                    // Write received data into waveProvider
+                    waveProvider.AddSamples(buffer, 0, receivedBytes);
+                } catch (System.InvalidOperationException)
+                {
+                    // Buffer overflow
+                    waveProvider.ClearBuffer();
+                }
             }
         }
         else
