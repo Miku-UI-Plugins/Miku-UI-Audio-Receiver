@@ -1,6 +1,8 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Miku_UI_Music_Center.Platform.MacOS;
 
 namespace Miku_UI_Music_Center
 {
@@ -19,6 +21,11 @@ namespace Miku_UI_Music_Center
             }
 
             base.OnFrameworkInitializationCompleted();
+            if (OperatingSystem.IsMacOS())
+            {
+                MacStatusBar.Init();
+                MacStatusBar.SetText(StringResources.StringResources.ApplicationName);
+            }  // Only runs on macOS
         }
     }
 }

@@ -11,6 +11,7 @@ using Avalonia.Markup.Xaml;
 using Miku_UI_Music_Center.Utils;
 using NAudio.Wave;
 using OpenTK.Audio.OpenAL;
+using Miku_UI_Music_Center.Platform.MacOS;
 
 namespace Miku_UI_Music_Center;
 
@@ -42,7 +43,16 @@ public partial class LyricFloatWindow : Window
 
     public LyricFloatWindow(bool isAudioForwadEnabled)
     {
-        InitializeComponent();
+        if (OperatingSystem.IsMacOS())
+        {
+            // Minimize the window on macOS, because we'll show lyrics on the status bar
+            this.ShowInTaskbar = false;
+            this.WindowState = WindowState.Minimized;
+            this.Hide();
+        } else
+        {
+            InitializeComponent();
+        }
         InitListener();
         if (isAudioForwadEnabled)
         {
@@ -203,7 +213,15 @@ public partial class LyricFloatWindow : Window
 
             if (response.IndexOf(EOM) > -1 /* is end of Lyric */)
             {
-                LyricText.Text = response.Replace(EOM, "");
+                var lyric = response.Replace(EOM, "");
+                if (OperatingSystem.IsMacOS())
+                {
+                    MacStatusBar.SetText(lyric);
+                }
+                else
+                {
+                    LyricText.Text = lyric;
+                }
                 await StartListen(socket);
                 break;
             }
