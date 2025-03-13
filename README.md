@@ -44,7 +44,7 @@ Before we start, ensure you have .NET Runtime and OpenAL installed, if not, inst
 
 Before we start, ensure you have .NET Runtime installed, if not, install it first.
 
-You can install it via [official website](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-8.0.14-macos-x64-installer)
+You can install it via [official website](https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-8.0.14-macos-x64-installer)
 
 1. Launch MULS from your device.
 2. Go to Settings and enable **Remote lyric**.
