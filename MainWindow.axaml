@@ -21,7 +21,7 @@
 			<Setter Property="TransparencyLevelHint" Value="AcrylicBlur" />
 			<Setter Property="Background">
 				<Setter.Value>
-					<SolidColorBrush Color="White" Opacity="{OnPlatform Default='1', Windows='0.1'}"></SolidColorBrush>
+					<SolidColorBrush Color="White" Opacity="{OnPlatform Default='1', Windows='0.1', macOS='0.1'}"></SolidColorBrush>
 				</Setter.Value>
 			</Setter>
 		</Style>
