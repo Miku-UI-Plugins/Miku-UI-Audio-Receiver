@@ -33,7 +33,7 @@
 			<OnPlatform>
 				<OnPlatform.Default>
 					<Setter Property="Effect">
-						<!-- Windows don't need this workaround -->
+						<!-- Windows doesn't need this workaround -->
 					</Setter>
 				</OnPlatform.Default>
 				<OnPlatform.Linux>
@@ -54,7 +54,7 @@
 		<OnPlatform>
 			<OnPlatform.Default>
 				<Style Selector="Button">
-					<!-- Windows don't need this workaround -->
+					<!-- Windows doesn't need this workaround -->
 				</Style>
 			</OnPlatform.Default>
 			<OnPlatform.Linux>
